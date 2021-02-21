@@ -8,7 +8,7 @@
 #include <string>
 
 class Account {
-    friend std::iostream &operator<<( std::iostream &io, const Account &src );
+    friend std::ostream &operator<<( std::ostream &io, const Account &src );
 protected:
 
 private:
@@ -16,7 +16,8 @@ private:
     double balance;
 public:
     Account();
-    Account( const std::string &name, double balance );
+    Account( const std::string &name, const double balance );
+    Account( const double balance );
     Account( const Account &src );
     ~Account();
 

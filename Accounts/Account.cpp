@@ -10,10 +10,14 @@ Account::Account() : balance{0.0}, name{"No Account Name"} {
     std::cout << "Account() constructor\n";
 }
 
-Account::Account(const std::string &name, double balance)
+Account::Account(const std::string &name, const double balance)
         : name{name}, balance{balance} {
 
     std::cout << "Account(const std::string &name, double balance) constructor\n";
+}
+
+Account::Account( const double balance ) : balance{balance}, name{"No Account Name"}  {
+    std::cout << "Account(double balance) constructor\n";
 }
 
 // Copy constructor
@@ -31,7 +35,7 @@ void Account::deposit(double amount) {
 
     std::cout << "Account (" << balance << ") deposit £" << amount << std::endl;
     balance += amount;
-    std::cout << "New balance £" << balance << std::endl;
+    std::cout << "Account new balance £" << balance << std::endl;
 }
 
 void Account::withdraw(double amount) {
@@ -39,7 +43,7 @@ void Account::withdraw(double amount) {
     if (balance - amount >= 0) {
         std::cout << "Account (£" << balance << ") withdraw £" << amount << std::endl;
         balance -= amount;
-        std::cout << "New balance £" << balance << std::endl;
+        std::cout << "Account new balance £" << balance << std::endl;
     } else {
         std::cout << "Account (£" << balance
             << ") not enough funds to withdraw £" << amount << std::endl;
@@ -76,7 +80,7 @@ Account &Account::operator=(const Account &src) {
     return *this;
 }
 
-std::iostream &operator<<( std::iostream &os, const Account &src ) {
+std::ostream &operator<<( std::ostream &os, const Account &src ) {
     os << "Account balance £" << src.getBalance();
     return os;
 }

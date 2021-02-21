@@ -10,6 +10,7 @@
 class SavingsAccount : public Account {
     // Inherit non special constructor from base class Account
     // using Account::Account;
+    friend std::ostream &operator<<( std::ostream &os, const SavingsAccount &src );
 protected:
 
 private:
@@ -17,12 +18,13 @@ private:
 public:
     SavingsAccount();
     SavingsAccount(const std::string &name, const double balance);
+    SavingsAccount( const double balance, const double interestRate );
     SavingsAccount( const SavingsAccount &src );
     ~SavingsAccount();
 
     double getInterestRate() const;
     void setInterestRate(double interestRate);
-
+    void deposit( double amount );
     SavingsAccount &operator=( const SavingsAccount &src );
 };
 
