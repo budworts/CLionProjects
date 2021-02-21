@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.cpp
+iostream
+-
+Account.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
+
+/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
+string
+-
+
+/Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.cpp
+iostream
+-
+SavingsAccount.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.h
+
+/Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.h
+Account.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
+
+/Users/stevenbudworth/Development/cpp/clion/Accounts/main.cpp
+iostream
+-
+Account.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
+SavingsAccount.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.h
+
