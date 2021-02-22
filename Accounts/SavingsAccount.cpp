@@ -21,7 +21,7 @@ SavingsAccount::~SavingsAccount() {
 }
 
 bool SavingsAccount::deposit( double amount ) {
-    amount += amount*(interestRate/100)
+    amount += amount*(interestRate/100);
     return Account::deposit(amount);
 }
 
