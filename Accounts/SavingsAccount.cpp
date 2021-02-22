@@ -5,14 +5,19 @@
 
 #include "SavingsAccount.h"
 
-SavingsAccount::SavingsAccount() : Account{}, interestRate{3.0} {
+SavingsAccount::SavingsAccount() : SavingsAccount{0.0,0.0} {
     std::cout << "SavingsAccount() constructor\n";
 }
 
 SavingsAccount::SavingsAccount(const std::string &name, const double balance)
-    : Account{name,balance}, interestRate{3.0} {
+    : Account{name,balance}, interestRate{0.0} {
 
     std::cout << "SavingsAccount(const std::string &name, const double balance) constructor\n";
+}
+
+SavingsAccount::SavingsAccount( const double balance, const double interestRate )
+    : Account{balance}, interestRate{interestRate} {
+    std::cout << "SavingsAccount(balance,interestRate) constructor\n";
 }
 
 // Copy constructor
@@ -26,6 +31,14 @@ SavingsAccount::~SavingsAccount() {
     std::cout << "~SavingsAccount(" << getName() << ") destructor\n";
 }
 
+void SavingsAccount::deposit( double amount ) {
+
+    std::cout << "Deposit £" << amount << " interest rate: " << interestRate << std::endl;
+    amount += ((amount*interestRate)/100);
+    std::cout << "Savings account deposit amount £" << amount << std::endl;
+    Account::deposit(amount);
+}
+
 double SavingsAccount::getInterestRate() const {
     return interestRate;
 }
@@ -37,7 +50,7 @@ void SavingsAccount::setInterestRate(double interestRate) {
 // Copy assignment operator
 SavingsAccount &SavingsAccount::operator=(const SavingsAccount &src) {
 
-    std::cout << "Account copy assignment (=) used\n";
+    std::cout << "Savings account copy assignment (=) used\n";
 
     if ( this != &src ) {
         Account::operator=(src);
@@ -47,3 +60,7 @@ SavingsAccount &SavingsAccount::operator=(const SavingsAccount &src) {
     return *this;
 }
 
+std::ostream &operator<<( std::ostream &os, const SavingsAccount &src ) {
+    os << "Saving account balance £" << src.getBalance() << " interest rate " << src.getInterestRate();
+    return os;
+}
