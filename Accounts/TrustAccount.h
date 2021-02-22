@@ -22,6 +22,7 @@ private:
 public:
     // Constructors
     TrustAccount( std::string name = defName,  double balance = defBalance, double interestRate = defInterestRate );
+    TrustAccount( const TrustAccount &src );
     ~TrustAccount();
 
     bool withdraw( double amount );

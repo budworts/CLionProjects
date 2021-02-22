@@ -7,13 +7,12 @@
 
 SavingsAccount::SavingsAccount(const std::string name, const double balance, const double interestRate )
     : Account{name,balance}, interestRate{interestRate} {
-    std::cout << "SavingsAccount --------- " << this->interestRate << std::endl;
 //    std::cout << "SavingsAccount(name, balance, interestRate) constructor\n";
 }
 
 // Copy constructor
 SavingsAccount::SavingsAccount( const SavingsAccount &src )
-    : Account{src} {
+    : Account{src}, interestRate{src.interestRate} {
 //    std::cout << "SavingsAccount(&src) copy constructor\n";
 }
 
@@ -22,9 +21,7 @@ SavingsAccount::~SavingsAccount() {
 }
 
 bool SavingsAccount::deposit( double amount ) {
-//    std::cout << "Deposit £" << amount << " interest rate: " << interestRate << std::endl;
-    amount += amount*(interestRate/100);
-//    std::cout << "Savings account deposit amount £" << amount << std::endl;
+    amount += amount*(interestRate/100)77
     return Account::deposit(amount);
 }
 

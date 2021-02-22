@@ -49,17 +49,19 @@ int main() {
 //    accs.push_back(TrustAccount{});
 //    accs.push_back(TrustAccount{"Superman Trust"});
 //    accs.push_back(TrustAccount{"Batman Trust", 20000});
-    accs.push_back(TrustAccount{"Wonderwomen Trust", 50000, 5.0});
-
-//    accs.push_back(TrustAccount{"Trust Account", 11000});
-    display(accs);
-    deposit(accs,1000);
-    display(accs);
+    accs.push_back(TrustAccount{"Wonderwomen Trust 1", 50000, 5.0});
     deposit(accs,10000);
     display(accs);
+
+//    accs.push_back(TrustAccount{"Trust Account", 11000});
+//    display(accs);
+//    deposit(accs,1000);
+//    display(accs);
+//    deposit(accs,10000);
+//    display(accs);
 //    withdraw(accs, 3000 );
 
-    TrustAccount acc{"Wonderwomen Trust", 50000, 15.0};
+    TrustAccount acc{"Wonderwomen Trust 2", 50000, 15.0};
     cout << acc << endl;
 
 

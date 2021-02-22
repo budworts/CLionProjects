@@ -8,7 +8,11 @@
 
 TrustAccount::TrustAccount( std::string name, double balance, double interestRate )
     : SavingsAccount{name, balance, interestRate } {
-    std::cout << "TrustAccount --------- " << this->interestRate << std::endl;
+}
+
+// Copy constructor
+TrustAccount::TrustAccount(const TrustAccount &src)
+    : SavingsAccount{src} {
 }
 
 TrustAccount::~TrustAccount() {}
@@ -39,7 +43,7 @@ bool TrustAccount::deposit(double amount) {
         amount += bonus;
     }
 
-    return Account::deposit(amount);
+    return SavingsAccount::deposit(amount);
 }
 
 std::ostream &operator<<( std::ostream &os, const TrustAccount &src ) {
@@ -49,3 +53,4 @@ std::ostream &operator<<( std::ostream &os, const TrustAccount &src ) {
         << " number of withdrawals " << src.numberOfWithdrawals;
     return os;
 }
+
