@@ -86,10 +86,28 @@
 		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h">
 			<Option target="Accounts"/>
 		</Unit>
+		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/AccountUtil.cpp">
+			<Option target="Accounts"/>
+		</Unit>
+		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/AccountUtil.h">
+			<Option target="Accounts"/>
+		</Unit>
+		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/CheckingAccount.cpp">
+			<Option target="Accounts"/>
+		</Unit>
+		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/CheckingAccount.h">
+			<Option target="Accounts"/>
+		</Unit>
 		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.cpp">
 			<Option target="Accounts"/>
 		</Unit>
 		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.h">
+			<Option target="Accounts"/>
+		</Unit>
+		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.cpp">
+			<Option target="Accounts"/>
+		</Unit>
+		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.h">
 			<Option target="Accounts"/>
 		</Unit>
 		<Unit filename="/Users/stevenbudworth/Development/cpp/clion/Accounts/main.cpp">

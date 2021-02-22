@@ -170,6 +170,60 @@ Account.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/Account.cpp.s
 .PHONY : Account.cpp.s
 
+AccountUtil.o: AccountUtil.cpp.o
+
+.PHONY : AccountUtil.o
+
+# target to build an object file
+AccountUtil.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/AccountUtil.cpp.o
+.PHONY : AccountUtil.cpp.o
+
+AccountUtil.i: AccountUtil.cpp.i
+
+.PHONY : AccountUtil.i
+
+# target to preprocess a source file
+AccountUtil.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/AccountUtil.cpp.i
+.PHONY : AccountUtil.cpp.i
+
+AccountUtil.s: AccountUtil.cpp.s
+
+.PHONY : AccountUtil.s
+
+# target to generate assembly for a file
+AccountUtil.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/AccountUtil.cpp.s
+.PHONY : AccountUtil.cpp.s
+
+CheckingAccount.o: CheckingAccount.cpp.o
+
+.PHONY : CheckingAccount.o
+
+# target to build an object file
+CheckingAccount.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/CheckingAccount.cpp.o
+.PHONY : CheckingAccount.cpp.o
+
+CheckingAccount.i: CheckingAccount.cpp.i
+
+.PHONY : CheckingAccount.i
+
+# target to preprocess a source file
+CheckingAccount.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/CheckingAccount.cpp.i
+.PHONY : CheckingAccount.cpp.i
+
+CheckingAccount.s: CheckingAccount.cpp.s
+
+.PHONY : CheckingAccount.s
+
+# target to generate assembly for a file
+CheckingAccount.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/CheckingAccount.cpp.s
+.PHONY : CheckingAccount.cpp.s
+
 SavingsAccount.o: SavingsAccount.cpp.o
 
 .PHONY : SavingsAccount.o
@@ -196,6 +250,33 @@ SavingsAccount.s: SavingsAccount.cpp.s
 SavingsAccount.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/SavingsAccount.cpp.s
 .PHONY : SavingsAccount.cpp.s
+
+TrustAccount.o: TrustAccount.cpp.o
+
+.PHONY : TrustAccount.o
+
+# target to build an object file
+TrustAccount.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/TrustAccount.cpp.o
+.PHONY : TrustAccount.cpp.o
+
+TrustAccount.i: TrustAccount.cpp.i
+
+.PHONY : TrustAccount.i
+
+# target to preprocess a source file
+TrustAccount.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/TrustAccount.cpp.i
+.PHONY : TrustAccount.cpp.i
+
+TrustAccount.s: TrustAccount.cpp.s
+
+.PHONY : TrustAccount.s
+
+# target to generate assembly for a file
+TrustAccount.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Accounts.dir/build.make CMakeFiles/Accounts.dir/TrustAccount.cpp.s
+.PHONY : TrustAccount.cpp.s
 
 main.o: main.cpp.o
 
@@ -236,9 +317,18 @@ help:
 	@echo "... Account.o"
 	@echo "... Account.i"
 	@echo "... Account.s"
+	@echo "... AccountUtil.o"
+	@echo "... AccountUtil.i"
+	@echo "... AccountUtil.s"
+	@echo "... CheckingAccount.o"
+	@echo "... CheckingAccount.i"
+	@echo "... CheckingAccount.s"
 	@echo "... SavingsAccount.o"
 	@echo "... SavingsAccount.i"
 	@echo "... SavingsAccount.s"
+	@echo "... TrustAccount.o"
+	@echo "... TrustAccount.i"
+	@echo "... TrustAccount.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

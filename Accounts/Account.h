@@ -10,15 +10,16 @@
 class Account {
     friend std::ostream &operator<<( std::ostream &io, const Account &src );
 protected:
-
-private:
     std::string name;
     double balance;
+private:
+    static constexpr const char *defName{"Unnamed Account"};
+    static constexpr double defBalance{0.0};
 public:
-    Account();
-    Account( const std::string &name, const double balance );
-    Account( const double balance );
+    // Constructors
+    Account( const std::string name = defName, const double balance = defBalance );
     Account( const Account &src );
+
     ~Account();
 
     double getBalance() const;
@@ -27,8 +28,8 @@ public:
     const std::string &getName() const;
     void setName(const std::string &name);
 
-    void deposit( double amount );
-    void withdraw( double amount );
+    bool deposit( double amount );
+    bool withdraw( double amount );
 
     Account &operator=( const Account &src );
 

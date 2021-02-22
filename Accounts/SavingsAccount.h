@@ -12,19 +12,21 @@ class SavingsAccount : public Account {
     // using Account::Account;
     friend std::ostream &operator<<( std::ostream &os, const SavingsAccount &src );
 protected:
-
-private:
     double interestRate;
+private:
+    static constexpr const char *defName = "Unnamed Savings Account";
+    static constexpr double defBalance = 0.0;
+    static constexpr double defInterestRate = 3.0;
 public:
-    SavingsAccount();
-    SavingsAccount(const std::string &name, const double balance);
-    SavingsAccount( const double balance, const double interestRate );
+    // Constructors
+    SavingsAccount(const std::string name = defName, const double balance = defBalance, double interestRate = defInterestRate );
     SavingsAccount( const SavingsAccount &src );
+
     ~SavingsAccount();
 
     double getInterestRate() const;
     void setInterestRate(double interestRate);
-    void deposit( double amount );
+    bool deposit( double amount );
     SavingsAccount &operator=( const SavingsAccount &src );
 };
 
