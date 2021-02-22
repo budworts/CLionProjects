@@ -6,49 +6,42 @@
 
 #include "Account.h"
 
-Account::Account() : balance{0.0}, name{"No Account Name"} {
-    std::cout << "Account() constructor\n";
-}
-
-Account::Account(const std::string &name, const double balance)
+Account::Account(const std::string name, const double balance)
         : name{name}, balance{balance} {
-
-    std::cout << "Account(const std::string &name, double balance) constructor\n";
-}
-
-Account::Account( const double balance ) : balance{balance}, name{"No Account Name"}  {
-    std::cout << "Account(double balance) constructor\n";
+//    std::cout << "Account(name, balance) constructor\n";
 }
 
 // Copy constructor
 Account::Account( const Account &src )
     : name{src.name}, balance{src.balance} {
 
-    std::cout << "Account(const Account &src) copy constructor\n";
+//    std::cout << "Account(&src) copy constructor\n";
 }
 
 Account::~Account() {
-    std::cout << "~Account(" << name << ") destructor\n";
+//    std::cout << "~Account(" << name << ") destructor\n";
 }
 
-void Account::deposit(double amount) {
+bool Account::deposit(double amount) {
 
-    std::cout << "Account (" << balance << ") deposit £" << amount << std::endl;
+    if ( amount <= 0 ) {
+        return false;
+    }
+
     balance += amount;
-    std::cout << "Account new balance £" << balance << std::endl;
+    return true;
 }
 
-void Account::withdraw(double amount) {
+bool Account::withdraw(double amount) {
 
     if (balance - amount >= 0) {
         std::cout << "Account (£" << balance << ") withdraw £" << amount << std::endl;
         balance -= amount;
-        std::cout << "Account new balance £" << balance << std::endl;
-    } else {
-        std::cout << "Account (£" << balance
-            << ") not enough funds to withdraw £" << amount << std::endl;
+        return true;
+
     }
 
+    return false;
 }
 
 double Account::getBalance() const {
@@ -70,7 +63,7 @@ void Account::setName(const std::string &name) {
 // Copy assignment operator
 Account &Account::operator=(const Account &src) {
 
-    std::cout << "SavingsAccount copy assignment (=) used\n";
+//    std::cout << "SavingsAccount copy assignment (=) used\n";
 
     if ( this != &src ) {
         this->name = src.name;
@@ -81,6 +74,6 @@ Account &Account::operator=(const Account &src) {
 }
 
 std::ostream &operator<<( std::ostream &os, const Account &src ) {
-    os << "Account balance £" << src.getBalance();
+    os << "Account \"" << src.name << "\" balance £" << src.balance;
     return os;
 }

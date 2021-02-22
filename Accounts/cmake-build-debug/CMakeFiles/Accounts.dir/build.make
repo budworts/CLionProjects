@@ -116,11 +116,53 @@ CMakeFiles/Accounts.dir/SavingsAccount.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Accounts.dir/SavingsAccount.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.cpp -o CMakeFiles/Accounts.dir/SavingsAccount.cpp.s
 
+CMakeFiles/Accounts.dir/AccountUtil.cpp.o: CMakeFiles/Accounts.dir/flags.make
+CMakeFiles/Accounts.dir/AccountUtil.cpp.o: ../AccountUtil.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/stevenbudworth/Development/cpp/clion/Accounts/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Accounts.dir/AccountUtil.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Accounts.dir/AccountUtil.cpp.o -c /Users/stevenbudworth/Development/cpp/clion/Accounts/AccountUtil.cpp
+
+CMakeFiles/Accounts.dir/AccountUtil.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Accounts.dir/AccountUtil.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevenbudworth/Development/cpp/clion/Accounts/AccountUtil.cpp > CMakeFiles/Accounts.dir/AccountUtil.cpp.i
+
+CMakeFiles/Accounts.dir/AccountUtil.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Accounts.dir/AccountUtil.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevenbudworth/Development/cpp/clion/Accounts/AccountUtil.cpp -o CMakeFiles/Accounts.dir/AccountUtil.cpp.s
+
+CMakeFiles/Accounts.dir/CheckingAccount.cpp.o: CMakeFiles/Accounts.dir/flags.make
+CMakeFiles/Accounts.dir/CheckingAccount.cpp.o: ../CheckingAccount.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/stevenbudworth/Development/cpp/clion/Accounts/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Accounts.dir/CheckingAccount.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Accounts.dir/CheckingAccount.cpp.o -c /Users/stevenbudworth/Development/cpp/clion/Accounts/CheckingAccount.cpp
+
+CMakeFiles/Accounts.dir/CheckingAccount.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Accounts.dir/CheckingAccount.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevenbudworth/Development/cpp/clion/Accounts/CheckingAccount.cpp > CMakeFiles/Accounts.dir/CheckingAccount.cpp.i
+
+CMakeFiles/Accounts.dir/CheckingAccount.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Accounts.dir/CheckingAccount.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevenbudworth/Development/cpp/clion/Accounts/CheckingAccount.cpp -o CMakeFiles/Accounts.dir/CheckingAccount.cpp.s
+
+CMakeFiles/Accounts.dir/TrustAccount.cpp.o: CMakeFiles/Accounts.dir/flags.make
+CMakeFiles/Accounts.dir/TrustAccount.cpp.o: ../TrustAccount.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/stevenbudworth/Development/cpp/clion/Accounts/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Accounts.dir/TrustAccount.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Accounts.dir/TrustAccount.cpp.o -c /Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.cpp
+
+CMakeFiles/Accounts.dir/TrustAccount.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Accounts.dir/TrustAccount.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.cpp > CMakeFiles/Accounts.dir/TrustAccount.cpp.i
+
+CMakeFiles/Accounts.dir/TrustAccount.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Accounts.dir/TrustAccount.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.cpp -o CMakeFiles/Accounts.dir/TrustAccount.cpp.s
+
 # Object files for target Accounts
 Accounts_OBJECTS = \
 "CMakeFiles/Accounts.dir/main.cpp.o" \
 "CMakeFiles/Accounts.dir/Account.cpp.o" \
-"CMakeFiles/Accounts.dir/SavingsAccount.cpp.o"
+"CMakeFiles/Accounts.dir/SavingsAccount.cpp.o" \
+"CMakeFiles/Accounts.dir/AccountUtil.cpp.o" \
+"CMakeFiles/Accounts.dir/CheckingAccount.cpp.o" \
+"CMakeFiles/Accounts.dir/TrustAccount.cpp.o"
 
 # External object files for target Accounts
 Accounts_EXTERNAL_OBJECTS =
@@ -128,9 +170,12 @@ Accounts_EXTERNAL_OBJECTS =
 Accounts: CMakeFiles/Accounts.dir/main.cpp.o
 Accounts: CMakeFiles/Accounts.dir/Account.cpp.o
 Accounts: CMakeFiles/Accounts.dir/SavingsAccount.cpp.o
+Accounts: CMakeFiles/Accounts.dir/AccountUtil.cpp.o
+Accounts: CMakeFiles/Accounts.dir/CheckingAccount.cpp.o
+Accounts: CMakeFiles/Accounts.dir/TrustAccount.cpp.o
 Accounts: CMakeFiles/Accounts.dir/build.make
 Accounts: CMakeFiles/Accounts.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/stevenbudworth/Development/cpp/clion/Accounts/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Accounts"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/stevenbudworth/Development/cpp/clion/Accounts/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Accounts"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Accounts.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

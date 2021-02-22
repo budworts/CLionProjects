@@ -6,31 +6,53 @@
 
 #IncludeRegexTransform: 
 
-/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.cpp
-iostream
--
-Account.h
-/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
-
 /Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
 string
 -
 
-/Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.cpp
-iostream
+/Users/stevenbudworth/Development/cpp/clion/Accounts/AccountUtil.h
+vector
 -
+Account.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
 SavingsAccount.h
 /Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.h
+CheckingAccount.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/CheckingAccount.h
+TrustAccount.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.h
+
+/Users/stevenbudworth/Development/cpp/clion/Accounts/CheckingAccount.h
+Account.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
 
 /Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.h
 Account.h
 /Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
+
+/Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.cpp
+iostream
+-
+TrustAccount.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.h
+
+/Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.h
+SavingsAccount.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.h
 
 /Users/stevenbudworth/Development/cpp/clion/Accounts/main.cpp
 iostream
 -
+vector
+-
+AccountUtil.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/AccountUtil.h
 Account.h
 /Users/stevenbudworth/Development/cpp/clion/Accounts/Account.h
 SavingsAccount.h
 /Users/stevenbudworth/Development/cpp/clion/Accounts/SavingsAccount.h
+CheckingAccount.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/CheckingAccount.h
+TrustAccount.h
+/Users/stevenbudworth/Development/cpp/clion/Accounts/TrustAccount.h
 
