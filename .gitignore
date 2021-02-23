@@ -5,4 +5,5 @@
 /Accounts/.idea/
 /Overloading/.idea/
 /Overloading/cmake-build-debug/
-
+/.idea/
+/cmake-build-debug/CMakeFiles/clion-log.txt
