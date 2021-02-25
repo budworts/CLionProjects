@@ -19,6 +19,8 @@ TrustAccount::~TrustAccount() {}
 
 bool TrustAccount::withdraw(double amount) {
 
+    std::cout << "Trust withdrawal\n";
+
     if ( numberOfWithdrawals >= maxWithdrawals ) {
         std::cout << "max withdrawals exceeded" << std::endl;
         return false;
@@ -39,11 +41,26 @@ bool TrustAccount::withdraw(double amount) {
 
 bool TrustAccount::deposit(double amount) {
 
+    std::cout << "Trust account deposit\n";
+
     if ( amount > depositBonusTarget ) {
         amount += bonus;
     }
 
     return SavingsAccount::deposit(amount);
+}
+
+// Copy assignment operator
+TrustAccount &TrustAccount::operator=(const TrustAccount &src) {
+
+    std::cout << "Trust account copy assignment (=) used\n";
+
+    if ( this != &src ) {
+        SavingsAccount::operator=(src);
+        TrustAccount::numberOfWithdrawals = src.numberOfWithdrawals;
+    }
+
+    return *this;
 }
 
 std::ostream &operator<<( std::ostream &os, const TrustAccount &src ) {

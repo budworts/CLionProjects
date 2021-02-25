@@ -20,16 +20,16 @@ public:
     Account( const std::string name = defName, const double balance = defBalance );
     Account( const Account &src );
 
-    ~Account();
+    virtual ~Account();
 
-    double getBalance() const;
-    void setBalance(double balance);
+    virtual double getBalance() const;
+    virtual void setBalance(double balance);
 
-    const std::string &getName() const;
-    void setName(const std::string &name);
+    virtual const std::string &getName() const;
+    virtual void setName(const std::string &name);
 
-    bool deposit( double amount );
-    bool withdraw( double amount );
+    virtual bool deposit( double amount );
+    virtual bool withdraw( double amount );
 
     Account &operator=( const Account &src );
 

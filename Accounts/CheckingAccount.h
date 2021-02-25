@@ -20,7 +20,9 @@ public:
     CheckingAccount( std::string name = defName, double balance = defBalance );
     ~CheckingAccount();
 
-    bool withdraw( double amount );
+    bool withdraw( double amount ) override;
+
+    CheckingAccount &operator=(const CheckingAccount &src);
 };
 
 

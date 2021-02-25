@@ -9,11 +9,63 @@
 
 using namespace std;
 
+void doWithdraw( Account &a, double m );
+
 int main() {
     cout << "version: " << __cplusplus << endl;
 
-    cout.precision(2);
-    cout << fixed;
+    Account *pAcc = new Account();
+    Account *pSav = new SavingsAccount();
+    Account *pTst = new TrustAccount();
+    Account *pChk = new CheckingAccount();
+
+//    cout << "->withdraw\n";
+//    pAcc->withdraw(10);
+//    pSav->withdraw(10);
+//    pTst->withdraw(10);
+//    pChk->withdraw(10);
+//
+//    cout << "array withdraw\n";
+    Account *pArrAcc [] = {pAcc, pSav, pTst, pChk};
+
+    for (auto i = 0; i < 4; ++i) {
+        pArrAcc[i]->deposit(1000);
+        pArrAcc[i]->withdraw(5);
+        cout << *pArrAcc[i] << endl;
+    }
+
+    cout << "---------------------------\n";
+    Account *pTst2 = new TrustAccount("Dave", 1000.0);
+    *pTst = *pTst2;
+    pTst->deposit(100000);
+    pTst2->setName("Mavis");
+    pTst->withdraw(5);
+    pTst2->withdraw(11);
+    cout << "pTst after copy: " << *pTst << endl;
+    cout << "pTst2 after copy: " << *pTst2 << endl;
+
+    doWithdraw(*pTst,10000);
+    cout << "pTst after do: " << *pTst << endl;
+    doWithdraw(*pTst2,20);
+    cout << "pTst2 after do: " << *pTst2 << endl;
+    doWithdraw(*pSav,100);
+    cout << "pSav after do: " << *pSav << endl;
+
+//    cout << "vector withdraw\n";
+//    std::vector<Account *> pVecAcc = {pAcc, pSav, pTst, pChk};
+//
+//    for (auto p:pVecAcc) {
+//        p->withdraw(5);
+//    }
+
+    delete pAcc;
+    delete pSav;
+    delete pTst;
+    delete pChk;
+    delete pTst2;
+
+//    cout.precision(2);
+//    cout << fixed;
 
 //    vector<Account> accounts;
 //    accounts.push_back(Account{});
@@ -44,14 +96,15 @@ int main() {
 //    display(checkAccs);
 //    withdraw(checkAccs, 3000 );
 
-    vector<TrustAccount> accs;
+//    vector<TrustAccount> accs;
 
 //    accs.push_back(TrustAccount{});
 //    accs.push_back(TrustAccount{"Superman Trust"});
 //    accs.push_back(TrustAccount{"Batman Trust", 20000});
-    accs.push_back(TrustAccount{"Wonderwomen Trust 1", 50000, 5.0});
-    deposit(accs,10000);
-    display(accs);
+
+//    accs.push_back(TrustAccount{"Wonderwomen Trust 1", 50000, 5.0});
+//    deposit(accs,10000);
+//    display(accs);
 
 //    accs.push_back(TrustAccount{"Trust Account", 11000});
 //    display(accs);
@@ -61,10 +114,8 @@ int main() {
 //    display(accs);
 //    withdraw(accs, 3000 );
 
-    TrustAccount acc{"Wonderwomen Trust 2", 50000, 15.0};
-    cout << acc << endl;
-
-
+//    TrustAccount acc{"Wonderwomen Trust 2", 50000, 15.0};
+//    cout << acc << endl;
 
 //    cout << "Account....\n";
 //    Account acc{};
@@ -132,4 +183,9 @@ int main() {
 //    cout << savAcc3 << endl;
 //    cout << "--------------------------\n";
     return 0;
+}
+
+void doWithdraw( Account &a, double m ) {
+    cout << "-------- doWithdraw --------\n";
+    a.withdraw(m);
 }

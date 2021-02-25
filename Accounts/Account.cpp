@@ -24,6 +24,8 @@ Account::~Account() {
 
 bool Account::deposit(double amount) {
 
+    std::cout << "Account deposit\n";
+
     if ( amount <= 0 ) {
         return false;
     }
@@ -33,6 +35,8 @@ bool Account::deposit(double amount) {
 }
 
 bool Account::withdraw(double amount) {
+
+    std::cout << "Account withdrawal\n";
 
     if (balance - amount >= 0) {
         std::cout << "Account (£" << balance << ") withdraw £" << amount << std::endl;
@@ -63,7 +67,7 @@ void Account::setName(const std::string &name) {
 // Copy assignment operator
 Account &Account::operator=(const Account &src) {
 
-//    std::cout << "SavingsAccount copy assignment (=) used\n";
+    std::cout << "Account copy assignment (=) used\n";
 
     if ( this != &src ) {
         this->name = src.name;

@@ -25,8 +25,10 @@ public:
     TrustAccount( const TrustAccount &src );
     ~TrustAccount();
 
-    bool withdraw( double amount );
-    bool deposit( double amount );
+    bool withdraw( double amount ) override;
+    bool deposit( double amount ) override;
+
+    TrustAccount &operator=(const TrustAccount &src);
 };
 
 

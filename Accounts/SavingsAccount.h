@@ -26,7 +26,8 @@ public:
 
     double getInterestRate() const;
     void setInterestRate(double interestRate);
-    bool deposit( double amount );
+
+    bool deposit( double amount ) override;
     SavingsAccount &operator=( const SavingsAccount &src );
 };
 
