@@ -12,31 +12,16 @@ int main() {
 
     std::cout << "c++ version: " << __cplusplus << std::endl;
 
-    //    Shape s;
-//    Shape *p = new Shape();
+    Shape *s1 = new Circle();
+    Shape *s2 = new Line();
+    Shape *s3 = new Square();
 
-//        Circle c;
-//        c.draw();
+    std::vector<Shape *> shapes {s1,s2,s3};
 
-//    Shape *ptr = new Circle();
-//    ptr->draw();
-//    ptr->rotate();
-
-//    Shape *s1 = new Circle();
-//    Shape *s2 = new Line();
-//    Shape *s3 = new Square();
-//
-//    std::vector<Shape *> shapes {s1,s2,s3};
-
-//    for (const auto p: shapes)
-//        p->draw();
-
-//    screen_refresh(shapes);
-//
-//    delete s1;
-//    delete s2;
-//    delete s3;
-
+    screen_refresh(shapes);
+    delete s1;
+    delete s2;
+    delete s3;
     return 0;
 }
 
