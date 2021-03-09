@@ -3,4 +3,4 @@ project(SharedPointers)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(SharedPointers main.cpp)
+add_executable(SharedPointers main.cpp Test.h)

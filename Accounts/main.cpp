@@ -34,10 +34,20 @@ int main() {
     cout << "shared_ptr:\n";
 
     {
-        //    shared_ptr<Account> a1 = {new SavingsAccount{"Larry", 1000, 2.0}};
-        shared_ptr<Account> a2 = make_shared<SavingsAccount>("Budworth", 10000, 5.0);
-    }
+        shared_ptr<Account> a1 = make_shared<SavingsAccount>("Budworth", 3000);
+        shared_ptr<Account> a2 = make_shared<TrustAccount>("Davis", 10000, 5.0);
+        shared_ptr<Account> a3 = make_shared<CheckingAccount>("Smith", 4500);
 
+        vector<shared_ptr<Account>> accts;
+        accts.push_back(a1);
+        accts.push_back(a2);
+        accts.push_back(a3);
+
+        for ( const auto &acc: accts ) {
+            cout << *acc << endl;
+            cout << "use count : " << acc.use_count() << endl;
+        }
+    }
 
     return 0;
 
