@@ -16,6 +16,20 @@ void printableObj( I_Printable &obj );
 int main() {
     cout << "version: " << __cplusplus << endl;
 
+    unique_ptr<Account> savingsAcct = make_unique<SavingsAccount>("Budworth", 10000, 5.0);
+    cout << *savingsAcct << endl;
+
+    vector<unique_ptr<Account>> accts;
+    accts.push_back(make_unique<SavingsAccount>("Steven", 30000, 5.2));
+    accts.push_back(make_unique<TrustAccount>("Dave", 500, 10.0));
+    accts.push_back(make_unique<CheckingAccount>("Billy", 7000));
+
+    for ( const auto &acc: accts ) {
+        cout << *acc << endl;
+    }
+
+    return 0;
+
     CheckingAccount *pCA = new CheckingAccount();
     cout << *pCA << endl;
 
