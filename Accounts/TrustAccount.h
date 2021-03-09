@@ -8,7 +8,6 @@
 #include "SavingsAccount.h"
 
 class TrustAccount : public SavingsAccount {
-    friend std::ostream &operator<<( std::ostream &os, const TrustAccount &src );
 protected:
        int numberOfWithdrawals = 0;
 private:
@@ -25,11 +24,10 @@ public:
     TrustAccount( const TrustAccount &src );
     ~TrustAccount();
 
-    bool withdraw( double amount ) override;
-    bool deposit( double amount ) override;
-
+    virtual bool withdraw( double amount ) override;
+    virtual bool deposit( double amount ) override;
+    virtual void print(std::ostream &os) const override;
     TrustAccount &operator=(const TrustAccount &src);
 };
-
 
 #endif //ACCOUNTS_TRUSTACCOUNT_H

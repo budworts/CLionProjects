@@ -8,9 +8,6 @@
 #include "Account.h"
 
 class SavingsAccount : public Account {
-    // Inherit non special constructor from base class Account
-    // using Account::Account;
-    friend std::ostream &operator<<( std::ostream &os, const SavingsAccount &src );
 protected:
     double interestRate;
 private:
@@ -22,12 +19,13 @@ public:
     SavingsAccount(const std::string name = defName, const double balance = defBalance, double interestRate = defInterestRate );
     SavingsAccount( const SavingsAccount &src );
 
-    ~SavingsAccount();
+    ~SavingsAccount() = default;
 
     double getInterestRate() const;
     void setInterestRate(double interestRate);
-
-    bool deposit( double amount ) override;
+    virtual void print(std::ostream &os) const override;
+    virtual bool deposit( double amount ) override;
+    virtual bool withdraw( double amount ) override;
     SavingsAccount &operator=( const SavingsAccount &src );
 };
 
