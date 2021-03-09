@@ -18,25 +18,25 @@ int main() {
 
     CheckingAccount *pCA = new CheckingAccount();
     cout << *pCA << endl;
+
     SavingsAccount *pSA = new SavingsAccount();
     cout << *pSA << endl;
 
-    cout << "\n--- TrustAccount *pTA = new TrustAccount();" << endl;
+    cout << "\n--- TrustAccount(\"Steve\", 12000, 2.5)" << endl;
+    Account *pA = new TrustAccount("Steve", 12000, 2.5);
+    cout << *pA << endl;
 
+    cout << "\n--- TrustAccount *pTA = new TrustAccount();" << endl;
     TrustAccount *pTA = new TrustAccount();
     pTA->deposit(1000);
     cout << *pTA << endl;
-    cout << "\n--- TrustAccount *pTA2 = new TrustAccount();" << endl;
 
+    cout << "\n--- TrustAccount *pTA2 = new TrustAccount();" << endl;
     TrustAccount *pTA2 = new TrustAccount();
     *pTA2 = *pTA;
     pTA2->deposit(110000);
     cout << "*pTA : " << *pTA << endl;
     cout << "*pTA2 : " << *pTA2 << endl;
-
-    cout << "\n--- TrustAccount(\"Steve\", 12000, 2.5)" << endl;
-    Account *pA = new TrustAccount("Steve", 12000, 2.5);
-    cout << *pA << endl;
 
     cout << "--------------" << endl;
     CheckingAccount dave("Dave", 500);
