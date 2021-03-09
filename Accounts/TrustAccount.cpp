@@ -63,11 +63,7 @@ TrustAccount &TrustAccount::operator=(const TrustAccount &src) {
     return *this;
 }
 
-std::ostream &operator<<( std::ostream &os, const TrustAccount &src ) {
-    os << "Trust account \"" << src.name
-        << "\" balance £" << src.balance
-        << " interest rate " << src.interestRate
-        << " number of withdrawals " << src.numberOfWithdrawals;
-    return os;
+void TrustAccount::print(std::ostream &os) const {
+    os << "Trust account (" << name << ") £" << balance;
 }
 

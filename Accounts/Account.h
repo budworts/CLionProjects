@@ -6,9 +6,9 @@
 #define ACCOUNTS_ACCOUNT_H
 
 #include <string>
+#include "I_Printable.h"
 
-class Account {
-    friend std::ostream &operator<<( std::ostream &io, const Account &src );
+class Account : public I_Printable {
 protected:
     std::string name;
     double balance;
@@ -20,7 +20,7 @@ public:
     Account( const std::string name = defName, const double balance = defBalance );
     Account( const Account &src );
 
-    virtual ~Account();
+    virtual ~Account() = default;
 
     virtual double getBalance() const;
     virtual void setBalance(double balance);
@@ -28,12 +28,12 @@ public:
     virtual const std::string &getName() const;
     virtual void setName(const std::string &name);
 
-    virtual bool deposit( double amount );
-    virtual bool withdraw( double amount );
+    virtual bool deposit( double amount ) = 0;
+    virtual bool withdraw( double amount ) = 0;
+
+    virtual void print(std::ostream &os) const override;
 
     Account &operator=( const Account &src );
-
 };
-
 
 #endif //ACCOUNTS_ACCOUNT_H

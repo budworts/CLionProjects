@@ -10,15 +10,16 @@ CheckingAccount::CheckingAccount( std::string name,  double balance )
         : Account{name,balance} {
 }
 
-CheckingAccount::~CheckingAccount() {
-}
-
 bool CheckingAccount::withdraw(double amount) {
 
     std::cout << "Checking withdrawal\n";
 
     amount += checkFee;
     return Account::withdraw(amount);
+}
+
+bool CheckingAccount::deposit(double amount ) {
+    return Account::deposit(amount);
 }
 
 // Copy assignment operator
@@ -33,8 +34,6 @@ CheckingAccount &CheckingAccount::operator=(const CheckingAccount &src) {
     return *this;
 }
 
-
-std::ostream &operator<<( std::ostream &os, const CheckingAccount &src ) {
-    os << "Checking account \"" << src.name << "\" balance £" << src.balance;
-    return os;
+void CheckingAccount::print(std::ostream &os) const {
+    os << "Checking account (" << name << ") £" << balance;
 }

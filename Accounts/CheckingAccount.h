@@ -8,7 +8,6 @@
 #include "Account.h"
 
 class CheckingAccount : public Account {
-    friend std::ostream &operator<<( std::ostream &os, const CheckingAccount &src );
 protected:
 
 private:
@@ -18,12 +17,12 @@ private:
 public:
     // Constructors
     CheckingAccount( std::string name = defName, double balance = defBalance );
-    ~CheckingAccount();
+    ~CheckingAccount() = default;
 
-    bool withdraw( double amount ) override;
-
+    virtual bool withdraw( double amount ) override;
+    virtual bool deposit(double amount ) override;
     CheckingAccount &operator=(const CheckingAccount &src);
+    virtual void print(std::ostream &os) const override;
 };
-
 
 #endif //ACCOUNTS_CHECKINGACCOUNT_H

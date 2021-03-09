@@ -8,18 +8,11 @@
 
 Account::Account(const std::string name, const double balance)
         : name{name}, balance{balance} {
-//    std::cout << "Account(name, balance) constructor\n";
 }
 
 // Copy constructor
 Account::Account( const Account &src )
     : name{src.name}, balance{src.balance} {
-
-//    std::cout << "Account(&src) copy constructor\n";
-}
-
-Account::~Account() {
-//    std::cout << "~Account(" << name << ") destructor\n";
 }
 
 bool Account::deposit(double amount) {
@@ -77,7 +70,6 @@ Account &Account::operator=(const Account &src) {
     return *this;
 }
 
-std::ostream &operator<<( std::ostream &os, const Account &src ) {
-    os << "Account \"" << src.name << "\" balance £" << src.balance;
-    return os;
+void Account::print(std::ostream &os) const {
+    os << "Account (" << name << ") £" << balance;
 }

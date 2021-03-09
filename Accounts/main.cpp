@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+#include "I_Printable.h"
 #include "AccountUtil.h"
 #include "Account.h"
 #include "SavingsAccount.h"
@@ -10,14 +11,59 @@
 using namespace std;
 
 void doWithdraw( Account &a, double m );
+void printableObj( I_Printable &obj );
 
 int main() {
     cout << "version: " << __cplusplus << endl;
 
-    Account *pAcc = new Account();
-    Account *pSav = new SavingsAccount();
-    Account *pTst = new TrustAccount();
-    Account *pChk = new CheckingAccount();
+    CheckingAccount *pCA = new CheckingAccount();
+    cout << *pCA << endl;
+    SavingsAccount *pSA = new SavingsAccount();
+    cout << *pSA << endl;
+
+    cout << "\n--- TrustAccount *pTA = new TrustAccount();" << endl;
+
+    TrustAccount *pTA = new TrustAccount();
+    pTA->deposit(1000);
+    cout << *pTA << endl;
+    cout << "\n--- TrustAccount *pTA2 = new TrustAccount();" << endl;
+
+    TrustAccount *pTA2 = new TrustAccount();
+    *pTA2 = *pTA;
+    pTA2->deposit(110000);
+    cout << "*pTA : " << *pTA << endl;
+    cout << "*pTA2 : " << *pTA2 << endl;
+
+    cout << "\n--- TrustAccount(\"Steve\", 12000, 2.5)" << endl;
+    Account *pA = new TrustAccount("Steve", 12000, 2.5);
+    cout << *pA << endl;
+
+    cout << "--------------" << endl;
+    CheckingAccount dave("Dave", 500);
+    cout << dave << endl;
+
+    vector<Account *> accounts{pCA,pSA,pA,pTA,pTA2};
+    display(accounts);
+    deposit(accounts, 10000);
+    withdraw(accounts, 500);
+    display(accounts);
+
+    delete pCA;
+    delete pSA;
+    delete pA;
+    delete pTA;
+    delete pTA2;
+
+//    Account *pAcc = new Account();
+//    cout << *pAcc << endl;
+//    Account *pSav = new SavingsAccount();
+//    cout << *pSav << endl;
+//    Account *pTst = new TrustAccount();
+//    cout << *pTst << endl;
+//    Account *pChk = new CheckingAccount();
+//    cout << *pChk << endl;
+//
+//    printableObj(*pTst);
 
 //    cout << "->withdraw\n";
 //    pAcc->withdraw(10);
@@ -26,30 +72,30 @@ int main() {
 //    pChk->withdraw(10);
 //
 //    cout << "array withdraw\n";
-    Account *pArrAcc [] = {pAcc, pSav, pTst, pChk};
+//    Account *pArrAcc [] = {pAcc, pSav, pTst, pChk};
 
-    for (auto i = 0; i < 4; ++i) {
-        pArrAcc[i]->deposit(1000);
-        pArrAcc[i]->withdraw(5);
-        cout << *pArrAcc[i] << endl;
-    }
+//    for (auto i = 0; i < 4; ++i) {
+//        pArrAcc[i]->deposit(1000);
+//        pArrAcc[i]->withdraw(5);
+//        cout << *pArrAcc[i] << endl;
+//    }
 
-    cout << "---------------------------\n";
-    Account *pTst2 = new TrustAccount("Dave", 1000.0);
-    *pTst = *pTst2;
-    pTst->deposit(100000);
-    pTst2->setName("Mavis");
-    pTst->withdraw(5);
-    pTst2->withdraw(11);
-    cout << "pTst after copy: " << *pTst << endl;
-    cout << "pTst2 after copy: " << *pTst2 << endl;
-
-    doWithdraw(*pTst,10000);
-    cout << "pTst after do: " << *pTst << endl;
-    doWithdraw(*pTst2,20);
-    cout << "pTst2 after do: " << *pTst2 << endl;
-    doWithdraw(*pSav,100);
-    cout << "pSav after do: " << *pSav << endl;
+//    cout << "---------------------------\n";
+//    Account *pTst2 = new TrustAccount("Dave", 1000.0);
+//    *pTst = *pTst2;
+//    pTst->deposit(100000);
+//    pTst2->setName("Mavis");
+//    pTst->withdraw(5);
+//    pTst2->withdraw(11);
+//    cout << "pTst after copy: " << *pTst << endl;
+//    cout << "pTst2 after copy: " << *pTst2 << endl;
+//
+//    doWithdraw(*pTst,10000);
+//    cout << "pTst after do: " << *pTst << endl;
+//    doWithdraw(*pTst2,20);
+//    cout << "pTst2 after do: " << *pTst2 << endl;
+//    doWithdraw(*pSav,100);
+//    cout << "pSav after do: " << *pSav << endl;
 
 //    cout << "vector withdraw\n";
 //    std::vector<Account *> pVecAcc = {pAcc, pSav, pTst, pChk};
@@ -58,11 +104,11 @@ int main() {
 //        p->withdraw(5);
 //    }
 
-    delete pAcc;
-    delete pSav;
-    delete pTst;
-    delete pChk;
-    delete pTst2;
+//    delete pAcc;
+//    delete pSav;
+//    delete pTst;
+//    delete pChk;
+//    delete pTst2;
 
 //    cout.precision(2);
 //    cout << fixed;
@@ -188,4 +234,9 @@ int main() {
 void doWithdraw( Account &a, double m ) {
     cout << "-------- doWithdraw --------\n";
     a.withdraw(m);
+}
+
+
+void printableObj(I_Printable &obj) {
+    std::cout << obj << std::endl;
 }
