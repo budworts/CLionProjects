@@ -7,6 +7,8 @@
 #include "SavingsAccount.h"
 #include "CheckingAccount.h"
 #include "TrustAccount.h"
+#include "IllegalBalanceException.h"
+#include "InsufficentFundsException.h"
 
 using namespace std;
 
@@ -14,20 +16,42 @@ void doWithdraw( Account &a, double m );
 void printableObj( I_Printable &obj );
 
 int main() {
+
     cout << "version: " << __cplusplus << endl;
 
     cout << "unique_ptr:\n";
-    unique_ptr<Account> savingsAcct = make_unique<SavingsAccount>("Budworth", 10000, 5.0);
-    cout << *savingsAcct << endl;
+
+    try {
+        unique_ptr<Account> savingsAcct = make_unique<SavingsAccount>("Budworth", -10000, 5.0);
+        cout << *savingsAcct << endl;
+    }
+    catch ( const IllegalBalanceException &ex ) {
+        cout << ex.what() << endl;
+    }
+    catch ( const InsufficentFundsException &ex ) {
+        cout << ex.what() << endl;
+    }
 
     {
-        vector<unique_ptr<Account>> accts;
-        accts.push_back(make_unique<SavingsAccount>("Steven", 30000, 5.2));
-        accts.push_back(make_unique<TrustAccount>("Dave", 500, 10.0));
-        accts.push_back(make_unique<CheckingAccount>("Billy", 7000));
+        try {
+            vector<unique_ptr<Account>> accts;
+            accts.push_back(make_unique<SavingsAccount>("Steven", 30000, 5.2));
+            accts.push_back(make_unique<TrustAccount>("Dave", 500, 10.0));
+            accts.push_back(make_unique<CheckingAccount>("Billy", 400));
 
-        for (const auto &acc: accts) {
-            cout << *acc << endl;
+            for (const auto &acc: accts) {
+                cout << *acc << endl;
+            }
+
+            for ( auto &acc: accts ) {
+                acc->withdraw(600);
+            }
+        }
+        catch ( const IllegalBalanceException &ex ) {
+            cout << ex.what() << endl;
+        }
+        catch ( const InsufficentFundsException &ex ) {
+            cout << ex.what() << endl;
         }
     }
 

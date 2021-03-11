@@ -5,9 +5,15 @@
 #include <iostream>
 
 #include "Account.h"
+#include "IllegalBalanceException.h"
+#include "InsufficentFundsException.h"
 
 Account::Account(const std::string name, const double balance)
         : name{name}, balance{balance} {
+
+    if ( balance < 0.0 ) {
+        throw IllegalBalanceException();
+    }
 }
 
 // Copy constructor
@@ -35,10 +41,9 @@ bool Account::withdraw(double amount) {
         std::cout << "Account (£" << balance << ") withdraw £" << amount << std::endl;
         balance -= amount;
         return true;
-
+    } else {
+        throw InsufficentFundsException();
     }
-
-    return false;
 }
 
 double Account::getBalance() const {
