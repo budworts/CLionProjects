@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iomanip>
 
+void ruler();
+
 int main() {
 
     std::cout << "C++ version: " << __cplusplus << std::endl;
@@ -115,8 +117,7 @@ int main() {
         double num{1234.5678};
         std::string hello{"Hello"};
 
-        std::cout << "12345678901234567890\n";
-        std::cout << "--------------------\n";
+        ruler();
 
         std::cout << std::setw(10) << num
             << std::setw(10) << hello << "\n\n";
@@ -127,9 +128,18 @@ int main() {
             << std::setw(15)  << std::right << hello << std::endl // right is the default
             << std::setw(7) << hello << std::endl;
 
-
-
+        std::cout << std::setfill(' ');
+        std::cout << std::setw(10) << std::left << num
+            << std::setw(15) << std::left << hello << std::endl;
     }
 
     return 0;
+}
+
+void ruler() {
+    std::cout << std::endl;
+    std::cout << "------------------------------" << std::endl;
+    std::cout << "         1         2         3" << std::endl;
+    std::cout << "123456789012345678901234567890" << std::endl;
+    std::cout << "------------------------------" << std::endl;
 }
