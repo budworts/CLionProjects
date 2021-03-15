@@ -9,6 +9,7 @@ void printStudent(std::string &student, int score);
 int processResults(const std::string &studentAnswers, const std::string &correctAnswers);
 void challenge2();
 void challenge3();
+bool find_substring(const std::string &word_to_find, const std::string &target);
 
 int main() {
 
@@ -110,6 +111,10 @@ int main() {
 void challenge3() {
 
     std::ifstream inFile;
+    int numberOfWordsRead{0};
+    int numberOfWordsFound{0};
+    int numberOfWordsFound2{0};
+    std::string findWord{};
 
     inFile.open("../romeoandjuliet.txt");
 
@@ -118,10 +123,34 @@ void challenge3() {
         return;
     }
 
+    std::cout << "\nEnter the substring to search for: ";
+    std::cin >> findWord;
+
+    std::string word{};
+
+    while (inFile >> word ) {
+        numberOfWordsRead++;
+
+        if (find_substring(findWord, word)) {
+            numberOfWordsFound++;
+        }
+
+        int nPos = word.find(findWord, 0);
+
+        while (nPos != std::string::npos)
+        {
+            numberOfWordsFound2++;
+            std::cout << word << " ";
+            nPos = word.find(findWord, nPos + findWord.size());
+        }
+    }
+
     inFile.close();
 
-
-
+    std::cout << std::endl << std::endl;
+    std::cout << "number of words read    :" << numberOfWordsRead << std::endl;
+    std::cout << "number of words found 1 :" << numberOfWordsFound << std::endl;
+    std::cout << "number of words found 2 :" << numberOfWordsFound2 << std::endl;
 }
 
 void challenge2() {
@@ -163,6 +192,14 @@ void challenge2() {
     }
 
     printFooter(averageScore);
+}
+
+bool find_substring(const std::string &word_to_find, const std::string &target) {
+    std::size_t found = target.find(word_to_find);
+    if (found == std::string::npos)
+        return false;
+    else
+        return true;
 }
 
 void ruler() {
