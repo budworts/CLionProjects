@@ -109,6 +109,19 @@ int main() {
 
 void challenge3() {
 
+    std::ifstream inFile;
+
+    inFile.open("../romeoandjuliet.txt");
+
+    if (!inFile) {
+        std::cerr << "Error opening romeoandjuliet.txt ...\n";
+        return;
+    }
+
+    inFile.close();
+
+
+
 }
 
 void challenge2() {
