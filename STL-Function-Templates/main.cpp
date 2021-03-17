@@ -15,6 +15,27 @@ void func(T1 a,T2 b) {
     std::cout << "---- " << a << " - " << b << " ----" << std::endl;
 }
 
+template <typename T>
+void swap(T &a,T &b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+struct Person {
+    std::string name;
+    int age;
+
+    bool operator<(const Person &rhs) const {
+        return this->age < rhs.age;
+    }
+};
+
+std::ostream &operator<<(std::ostream &os, const Person &p) {
+    os << p.name;
+    return os;
+}
+
 void example1();
 void example2();
 
@@ -48,5 +69,11 @@ void example1() {
 }
 
 void example2() {
-
+    Person p1{"Dave", 58};
+    Person p2{"Fred", 55};
+    Person p3 = min(p1,p2);
+    std::cout << "Name: " << p3.name << std::endl;
+    func(p1,p2);
+    swap(p1,p2);
+    func(p1,p2);
 }
