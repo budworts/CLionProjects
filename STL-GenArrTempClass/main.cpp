@@ -62,7 +62,6 @@ int main() {
 
     strings.fill(std::string{"X"});
     std::cout << strings << std::endl;
-
-
+    
     return 0;
 }
