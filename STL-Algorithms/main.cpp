@@ -122,6 +122,5 @@ int main() {
     replace_test();
     all_of_test();
     string_transform_test();
-
     return 0;
 }
