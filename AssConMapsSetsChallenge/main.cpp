@@ -61,8 +61,13 @@ void part1() {
     if (in_file) {
 
         // You implement this code
-        while (in_file >> word ) {
+        while ( std::getline(in_file, line) ) {
+            std::stringstream ss(line);
 
+            while ( ss >> word ) {
+                word = clean_string( word );
+                words[word]++;
+            }
         }
 
         // You implement this code
@@ -83,9 +88,18 @@ void part2() {
     std::ifstream in_file {"../words.txt"};
     if (in_file) {
 
-        // You implement this code
-        while (in_file >> word ) {
+        int lineNumber = 0;
 
+        // You implement this code
+
+        while (std::getline(in_file, line)) {
+            lineNumber++;
+            std::stringstream ss(line);
+
+            while (ss >> word) {
+                word = clean_string(word);
+                words[word].insert(lineNumber);
+            }
         }
 
         // You implement this code
