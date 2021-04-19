@@ -20,6 +20,9 @@ void display(std::stack<T> s) {
 }
 
 int main() {
+
+    std::cout << __cplusplus << std::endl;
+
     std::stack<int> s;
     std::stack<int, std::vector<int>> s1;
     std::stack<int, std::list<int>> s2;
