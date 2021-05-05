@@ -6,10 +6,11 @@ void Min();
 void Count();
 void Search();
 void Square();
-void LowTriangle();
-void UpperTriangle();
-void RevLowTriangle();
-void RevUpperTriangle();
+void LowTriangle(int n);
+void UpperTriangle(int n);
+void RevLowTriangle(int n);
+void RevUpperTriangle(int n);
+void Draw(int n );
 
 int main() {
 
@@ -98,12 +99,27 @@ int main() {
     Min();
     Count();
     // Search();
-    Square();
-    LowTriangle();
-    UpperTriangle();
-    RevLowTriangle();
-    RevUpperTriangle();
+    //Square();
+    LowTriangle(5);
+    UpperTriangle(5);
+    RevLowTriangle(5);
+    RevUpperTriangle(5);
+    //Draw(5);
     return 0;
+}
+
+void Draw(int n)
+{
+    using namespace std;
+
+    cout << endl;
+
+    for ( auto i = 0; i < n; i++ ) {
+        for ( auto j = 0; j < n; j++ ) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
 }
 
 void Square() {
@@ -121,32 +137,31 @@ void Square() {
     }
 }
 
-void LowTriangle() {
+void LowTriangle(int n) {
 
     using namespace std;
-    cout << endl;
+    cout << endl << "Lower Triangle" << endl;
 
-    for ( auto i = 0; i < 4; i ++ ) {
-        for ( auto j = 0; j < 4; j ++ ) {
-            if ( i >= j ) {
-                cout << "*";
-            }
+    for ( auto i = 1; i <= n; i ++ ) {
+        for ( auto j = 1; j <= i; j ++ ) {
+            cout << "* ";
         }
 
         cout << endl;
     }
 }
-void RevLowTriangle() {
+
+void RevLowTriangle(int n) {
 
     using namespace std;
-    cout << endl;
+    cout << endl << "Rev Lower Triangle" << endl;
 
-    for ( auto i = 0; i < 4; i ++ ) {
-        for ( auto j = 0; j < 4; j ++ ) {
-            if ( (j + i ) >= 3 ) {
-                cout << "*";
+    for ( auto i = 1; i <= n; i ++ ) {
+        for ( auto j = 1; j <= n; j ++ ) {
+            if ( j + i > n ) {
+                cout << "* ";
             } else {
-                cout << " ";
+                cout << "  ";
             }
         }
 
@@ -154,33 +169,29 @@ void RevLowTriangle() {
     }
 }
 
-void UpperTriangle() {
+void UpperTriangle(int n) {
     using namespace std;
-    cout << endl;
+    cout << endl << "Upper Triangle" << endl;
 
-    for ( auto i = 0; i < 4; i ++ ) {
-        for ( auto j = 0; j < 4; j ++ ) {
-            if ( i > j ) {
-                cout << " ";
-            } else {
-                cout << "*";
-            }
+    for ( auto i = 1; i <= n; i ++ ) {
+        for ( auto j = 1; j <= n - i + 1; j ++ ) {
+                cout << "* ";
         }
 
         cout << endl;
     }
 }
 
-void RevUpperTriangle() {
+void RevUpperTriangle(int n) {
     using namespace std;
-    cout << endl;
+    cout << endl << "Rev Upper Triangle" << endl;
 
-    for ( auto i = 0; i < 4; i ++ ) {
-        for ( auto j = 0; j < 4; j ++ ) {
+    for ( auto i = 1; i <= n; i ++ ) {
+        for ( auto j = 1; j <= n; j ++ ) {
             if ( i <= j ) {
-                cout << "*";
+                cout << "* ";
             } else {
-                cout << " ";
+                cout << "  ";
             }
         }
 
