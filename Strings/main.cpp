@@ -9,6 +9,9 @@ void readKB();
 void strTo();
 void tokens();
 void stringClass();
+void iterators();
+void palindrome();
+void email();
 
 int main() {
     std::cout << __cplusplus << std::endl;
@@ -18,9 +21,36 @@ int main() {
     // readKB();
     // strTo();
     // tokens();
-    stringClass();
+    // stringClass();
+    //iterators();
+    // palindrome();
+    email();
 
     return 0;
+}
+
+void email() {
+    string e{"budworts@googlemail.com"};
+    int i = (int)e.find('@');
+    string name = e.substr(0,i);
+    cout << name << endl;
+}
+
+void palindrome() {
+    string s1 = "MADAM";
+    string s2{};
+
+    int l = (int)s1.length();
+    s2.resize(l);
+
+    for ( auto i = 0, j = l-1; i < l; i++,j-- ) {
+        s2[i] = s1[j];
+    }
+
+    s2[l] = '\0';
+    cout << s2 << endl;
+
+    cout << s1.compare(s2) << endl;
 }
 
 void f1() {
@@ -79,6 +109,30 @@ void strTo() {
     //str to float
     float y = strtof(s2,nullptr);
     cout << y << endl;
+}
+
+void iterators() {
+
+    string s1{"Hello world"};
+
+    // string::iterator it = s1.begin();
+    // string::iterator it = s1.end();
+
+    string::iterator it;
+
+    for ( it = s1.begin(); it != s1.end(); it++ ) {
+        cout << *it;
+    }
+
+    cout << endl;
+
+    string::reverse_iterator rit;
+
+    for ( rit = s1.rbegin(); rit != s1.rend(); rit++ ) {
+        cout << *rit;
+    }
+
+    cout << endl;
 }
 
 void tokens() {
@@ -145,4 +199,44 @@ void stringClass() {
     s.swap(s1);
     cout << "s: " << s << endl;
     cout << "s1: " << s1 << endl;
+
+    char c[20];
+    s1.copy(c,s1.length());
+    c[s1.length()] = '\0';
+    cout << "c: " << c << endl;
+
+    cout << "s1.find() char o is at index " << s1.find('o') << endl;
+    cout << "s1.find() word again is at index " << s1.find("again") << endl;
+    cout << "s1.rfind() char a is at index " << s1.rfind('a') << endl;
+    cout << "s1.rfind() word ain is at index " << s1.rfind("ain") << endl;
+
+    s1 = "hello again hello again hello";
+    cout << "s1: " << s1 << endl;
+
+    cout << "s1.find() char k is at index " << s1.find('k') << endl;
+
+    cout << "s1.find_first_of(again) letter is at index " << s1.find_first_of("again") << endl;
+    cout << "s1.find_first_of(nh, 7) letter is at index " << s1.find_first_of("nh", 7) << endl;
+    cout << "s1.find_last_of(again) letter is at index " << s1.find_last_of("again") << endl;
+
+    string s2 = s1.substr(6, 5);
+    cout << "s2: " << s2 << endl;
+
+    s2 = s1.substr(4);
+    cout << "s2: " << s2 << endl;
+
+    string s3 = "Hello";
+    string s4 = "Hello";
+    cout << "compare = " << s4.compare(s3) << endl;
+    s4 = "hello";
+    cout << "compare = " << s4.compare(s3) << endl;
+
+    cout << "s4.at(3) = " << s4.at(3) << endl;
+    cout << "overloaded s4[3] = " << s4[3] << endl;
+
+    cout << "s4.front() = " <<  s4.front() << endl;
+    cout << "s4.back() = " <<  s4.back() << endl;
+
+    s4[0] = 'H';
+    cout << s3 + s4 << endl;
 }
