@@ -4,6 +4,19 @@
 
 #include "Rectangle.h"
 
+Rectangle::Rectangle(int length, int breadth) {
+    setLength(length);
+    setBreadth(breadth);
+}
+
+Rectangle::Rectangle(Rectangle &rectangle) {
+    setLength(rectangle.length);
+    setBreadth(rectangle.breadth);
+}
+
+Rectangle::~Rectangle() {
+}
+
 int Rectangle::area() {
     return length * breadth;
 }
@@ -36,4 +49,8 @@ void Rectangle::setBreadth(int breadth) {
     } else {
         Rectangle::breadth = breadth;
     }
+}
+
+bool Rectangle::isSquare() {
+    return length == breadth? true : false;
 }
