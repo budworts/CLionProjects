@@ -2,6 +2,7 @@
 // Created by Steven Budworth on 25/05/2021.
 //
 
+#include <iostream>
 #include "Rectangle.h"
 
 Rectangle::Rectangle(int length, int breadth) {
@@ -15,6 +16,7 @@ Rectangle::Rectangle(Rectangle &rectangle) {
 }
 
 Rectangle::~Rectangle() {
+    std::cout << "Destructor called..." << std::endl;
 }
 
 int Rectangle::area() {
@@ -32,9 +34,9 @@ int Rectangle::getLength() const {
 void Rectangle::setLength(int length) {
 
     if (length < 0) {
-        Rectangle::length = 1;
+        this->length = 1;
     } else {
-        Rectangle::length = length;
+        this->length = length;
     }
 }
 
@@ -45,9 +47,9 @@ int Rectangle::getBreadth() const {
 void Rectangle::setBreadth(int breadth) {
 
     if ( breadth < 0 ) {
-        Rectangle::breadth = 1;
+        this->breadth = 1;
     } else {
-        Rectangle::breadth = breadth;
+        this->breadth = breadth;
     }
 }
 

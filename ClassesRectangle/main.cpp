@@ -4,6 +4,16 @@
 
 using namespace std;
 
+
+struct Demo {
+    int x = 0;
+    int y = 0;
+
+    void display() {
+        std::cout << "Demo " << x << " " << y << std::endl;
+    }
+};
+
 int main() {
 
     cout << "Version: " << __cplusplus << endl;
@@ -14,7 +24,10 @@ int main() {
     r1.setBreadth(20);
     r1.setLength(20);
     cout << r1.area() << endl;
-    cout << r1.isSquare() << endl;
+
+    if ( r1.isSquare() ) {
+        cout << "r1 is a square" << endl;
+    }
 
     // Created in stack
     Rectangle r2;
@@ -30,6 +43,11 @@ int main() {
     Rectangle *ph = new Rectangle(5,3);
     cout << ph->area() << endl;
     delete ph;
+
+    Demo d1;
+    d1.x = 10;
+    d1.y = 5;
+    d1.display();
 
     return 0;
 }

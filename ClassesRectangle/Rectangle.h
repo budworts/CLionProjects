@@ -24,8 +24,8 @@ public:
     int perimeter();
 
     // Accessors
-    int getLength() const;
-    int getBreadth() const;
+    inline int getLength() const;
+    inline int getBreadth() const;
 
     // Mutators
     void setLength(int length);
