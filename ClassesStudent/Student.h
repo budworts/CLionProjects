@@ -13,7 +13,7 @@ class Student {
 
 private:
 
-    int roll;
+    int rollNum;
     string name;
     int mathsMark;
     int englishMark;
@@ -23,17 +23,17 @@ public:
 
     Student();
 
-    Student(int roll, const string &name, int mathsMark, int englishMark, int artMark);
+    Student(int rollNum, string name, int mathsMark, int englishMark, int artMark);
 
     ~Student();
 
-    int totalMarks() {
+    int totalMarks();
 
-    }
+    char grade();
 
-    int getRoll() const;
+    int getrollNum() const;
 
-    void setRoll(int roll);
+    void setrollNum(int rollNum);
 
     const string &getName() const;
 

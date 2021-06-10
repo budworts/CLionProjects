@@ -5,26 +5,45 @@
 #include "Student.h"
 
 
-Student::Student(int roll, const string &name, int mathsMark, int englishMark, int artMark) : roll(roll), name(name),
-                                                                                              mathsMark(mathsMark),
-                                                                                              englishMark(englishMark),
-                                                                                              artMark(artMark) {
+Student::Student(
+        int rollNum,
+        string name,
+        int mathsMark,
+        int englishMark,
+        int artMark)
+        : rollNum(rollNum),
+        name(name),
+        mathsMark(mathsMark),
+        englishMark(englishMark),
+        artMark(artMark) {
 }
-
-Student::Student() {}
-
 
 Student::~Student() {
 }
 
-
-
-int Student::getRoll() const {
-    return roll;
+int Student::totalMarks() {
+    return mathsMark + englishMark + artMark;
 }
 
-void Student::setRoll(int roll) {
-    Student::roll = roll;
+char Student::grade() {
+
+    float average = totalMarks() / 3;
+
+    if ( average < 40 ) {
+        return 'C';
+    } else if ( average >= 40 && average <= 60) {
+        return 'B';
+    } else {
+        return 'A';
+    }
+}
+
+int Student::getrollNum() const {
+    return rollNum;
+}
+
+void Student::setrollNum(int rollNum) {
+    Student::rollNum = rollNum;
 }
 
 const string &Student::getName() const {
