@@ -45,9 +45,15 @@ void Complex::setImg(int img) {
     Complex::img = img;
 }
 
+// Friend Functions
 Complex operator+(Complex &c1, Complex &c2) {
     Complex tmp;
     tmp.real = c1.real + c2.real;
     tmp.img = c1.img + c2.img;
     return tmp;
+}
+
+std::ostream&operator<<(std::ostream &os, Complex &c) {
+    os << c.real << "+i" << c.img;
+    return os;
 }

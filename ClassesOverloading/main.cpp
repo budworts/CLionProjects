@@ -20,5 +20,9 @@ int main() {
     c1 = c2 + c3;
     c1.display();
 
+    c2 = operator+(c1,c3);
+    c2.display();
+    cout << c2 << endl;
+    operator << (cout,c1) << endl;
     return 0;
 }

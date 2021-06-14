@@ -5,6 +5,7 @@
 #ifndef CLASSESOVERLOADING_COMPLEX_H
 #define CLASSESOVERLOADING_COMPLEX_H
 
+#include <ostream>
 
 class Complex {
 private:
@@ -18,6 +19,7 @@ public:
 //    Complex operator+(Complex &c);
 
     friend Complex operator+(Complex &c1, Complex &c2);
+    friend std::ostream&operator<<(std::ostream &os, Complex &c);
 
     void display();
 
