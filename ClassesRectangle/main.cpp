@@ -1,9 +1,9 @@
 #include <iostream>
 
 #include "Rectangle.h"
+#include "Cubiod.h"
 
 using namespace std;
-
 
 struct Demo {
     int x = 0;
@@ -48,6 +48,12 @@ int main() {
     d1.x = 10;
     d1.y = 5;
     d1.display();
+
+    Cubiod c1(10,10,5);
+    cout << "volume: " << c1.Volume() << endl;
+
+    Cubiod c2;
+    cout << "volume: " << c2.Volume() << endl;
 
     return 0;
 }

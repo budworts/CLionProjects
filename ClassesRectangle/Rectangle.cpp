@@ -20,11 +20,11 @@ Rectangle::~Rectangle() {
 }
 
 int Rectangle::area() {
-    return length * breadth;
+    return getLength() * getBreadth();
 }
 
 int Rectangle::perimeter() {
-    return (length * breadth) * 2;
+    return (getLength() * getBreadth()) * 2;
 }
 
 int Rectangle::getLength() const {
@@ -54,5 +54,5 @@ void Rectangle::setBreadth(int breadth) {
 }
 
 bool Rectangle::isSquare() {
-    return length == breadth? true : false;
+    return getLength() == getBreadth()? true : false;
 }
