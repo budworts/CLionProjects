@@ -4,6 +4,8 @@
 
 int main() {
 
+    std::cout << "Version: " << __cplusplus << std::endl;
+
     Child c;
 
 //    c.a = 20; error private
